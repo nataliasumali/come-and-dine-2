@@ -1,0 +1,13 @@
+<h3> <%= @blogpost.title %> </h3>
+
+<h4> <%= @blogpost.name %>, <%= @blogpost.city %>, <%= @blogpost.state %> </h4>
+
+<p> <%= @blogpost.content %> </p>
+
+<%= link_to "Enrich this enjoyment", edit_blogpost_path(@blogpost) %> |
+
+<%= link_to "Delete this post", :blogpost, method: :delete, data: { confirm: 'Are you sure?'} %> |
+
+<%= link_to "Back to the riches", blogposts_path %>
+
+	

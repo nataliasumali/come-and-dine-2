@@ -1,0 +1,11 @@
+<h1>O the Riches</h1>
+
+	<% @blogposts.each do |b| %>
+
+		<h3><%= link_to b.title, blogpost_path(b) %></h3>
+
+		<hr/>
+
+<% end %>
+
+<%= link_to "Add a New Enjoyment", new_blogpost_path %>
