@@ -10,25 +10,27 @@
 				<% end %>
 			</ul>
 		</div>
-	<% end %>
+	
 
-<div class="field">
-	<%= f.label :email %><br />
-	<%= f.text_field :email %>
-</div>
 
-<div class"field">
-	<%= f.label :password %><br />
-	<%= f.password_field :password %>
-</div>
 
-<div class="field">
-	<%= f.label :passowrd_confirmation %><br />
-	<%= f.password_field :password_confirmation %>
-</div>
+<!-- Bootsrap -->
 
-<div class="actions"><%= f.submit "Sign Up" %></div>
 
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Sign Up" %>
+  </div>
 <% end %>
-
-<button type="button" class="btn btn-primary">Primary</button>
+<% end %>

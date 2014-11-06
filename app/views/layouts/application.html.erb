@@ -13,30 +13,45 @@
 
 <div class="title">
 <h1>Come and Dine</h1>
-<h3>...all things are ready, come to the feast</h3>
+<h6>...all things are ready, come to the feast</h6>
 </div>
 
 <div id="user_header">
 
-<%= link_to "Blogs", blogposts_path %> |
+<%#= link_to "Blogs", blogposts_path %>
 
 <!-- <div id="container">
 	<div id="user_header"> -->
 		<%#= link_to "Sign_up", new_user_path %>
 	<!-- </div> -->
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+    <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log Out", session_path("current") %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %><br>
+      <%= link_to "Log In", new_session_path %>
+    <% end %>
+    </ul>
+  </li>
+
+</ul>
 	
   <% flash.each do |name,msg| %>
 		<%= content_tag :div, msg, id: "flash_#{name}" %>
 	<% end %>
 
 
-    <% if current_user %>
-      Logged in as <%= current_user.email %>.
-      <%= link_to "Log Out", session_path("current") %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_path %> |
-      <%= link_to "Log In", new_session_path %>
-    <% end %>
+   
 </div>
 
 <%= yield %>

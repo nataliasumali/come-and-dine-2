@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   post 'blogposts/new_comment' => 'blogposts#new_comment', as: :new_comment
 
-  root 'users#index'
+  root 'blogposts#index'
 
 
   
