@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :blogposts
 
+  post 'blogposts/new_comment' => 'blogposts#new_comment', as: :new_comment
+
   root 'users#index'
 
 

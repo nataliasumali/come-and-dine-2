@@ -4,10 +4,36 @@
 
 <p> <%= @blogpost.content %> </p>
 
+<% @blogpost.comments.each do |c| %>
+	<div><%= c.name %>
+	<div><%= c.comment %>
+<% end %>
+
+<h3> New Comment </h3>
+
+<%= form_for( @comment ,:url => {:action => :new_comment, :controller => :blogposts} ) do |f| %>
+
+
+    <%= hidden_field_tag :blogpost_id, @blogpost.id %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :comment %><br>
+      <%= f.text_area :comment %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
 <%= link_to "Enrich this enjoyment", edit_blogpost_path(@blogpost) %> |
 
 <%= link_to "Delete this post", :blogpost, method: :delete, data: { confirm: 'Are you sure?'} %> |
 
 <%= link_to "Back to the riches", blogposts_path %>
 
-	
+
+

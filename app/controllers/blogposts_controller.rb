@@ -1,8 +1,36 @@
 class BlogpostsController < ApplicationController
-  def show
-    @blogpost = Blogpost.find(params[:id])
+  
+  def index
+    @blogposts = Blogpost.all
+  end
+  
+  def new
+    @blogpost = Blogpost.new
+  end
+  
+  def create
+    @blogpost = Blogpost.new(params.require(:blogpost).permit(:name, :city, :state, :title, :content))
+    if @blogpost.save
+      redirect_to blogposts_path
+    else
+      render 'new'
+    end
   end
 
+  def show
+    @blogpost = Blogpost.find(params[:id])
+    @comment = Comment.new
+  end
+
+  def new_comment
+    @id = params[:blogpost_id]
+    @blogpost = Blogpost.find(@id)
+    @blogpost.comments << Comment.new(params.require(:comment).permit(:name, :comment))
+    if @blogpost.save
+      redirect_to blogposts_path
+    end
+  end
+  
   def edit
     @blogpost = Blogpost.find(params[:id])
   end
@@ -22,24 +50,4 @@ class BlogpostsController < ApplicationController
     end
   end
 
-  def create
-    @blogpost = Blogpost.new(params.require(:blogpost).permit(:name, :city, :state, :title, :content))
-    if @blogpost.save
-      redirect_to blogposts_path
-    else
-      render 'new'
-    end
-  end
-
-  def index
-    @blogposts = Blogpost.all
-  end
-
-  def new
-    @blogpost = Blogpost.new
-  end
-
-  def new_comment
-    
-  end
 end

@@ -1,7 +1,7 @@
 class Comment
 	include Mongoid::Document
 
-	field :author, type: String
+	field :name, type: String
 	field :comment, type: String
 
 	embedded_in :blogpost
