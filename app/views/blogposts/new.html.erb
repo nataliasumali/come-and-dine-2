@@ -1,35 +1,35 @@
-<h1>Add Enjoyment</h1>
+<h2>Add Enjoyment</h2>
 
 <%= form_for @blogpost do |f| %>
 
 <div class="col-md-3">
 	<div class="field">
-	<%= f.label :name %>
-	<%= f.text_field :name, placeholder: "name", :class => "form-control" %>
+		<%= f.label :name %>
+		<%= f.text_field :name, placeholder: "name", :class => "form-control" %>
 	</div>
 
 	<div class="field">
-	<%= f.label :city %>
-	<%= f.text_field :city, placeholder:"city", :class => "form-control" %>
+		<%= f.label :city %>
+		<%= f.text_field :city, placeholder:"city", :class => "form-control" %>
 	</div>
 
 	<div class="field">
-	<%= f.label :state %>
-	<%= f.text_field :state, placeholder: "state", :class => "form-control" %>
+		<%= f.label :state %>
+		<%= f.text_field :state, placeholder: "state", :class => "form-control" %>
 	</div>
 
 	<div class="field">
-	<%= f.label :title %>
-	<%= f.text_field :title, placeholder: "title", :class => "form-control" %>
+		<%= f.label :title %>
+		<%= f.text_field :title, placeholder: "title", :class => "form-control" %>
 	</div>
 
 	<div class="field">
-	<%= f.label :content %>
-	<%= f.text_area :content, placeholder: "content", :class => "form-control" %>
+		<%= f.label :content %>
+		<%= f.text_area :content, placeholder: "content", :class => "form-control", :rows => "10" %>
 	</div>
 	
 	<div class="actions">
-	<%= f.submit "Add Enjoyment" %>
+		<%= f.submit "Add Enjoyment", :class => "btn btn-primary" %>
 	</div>
 </div>
 

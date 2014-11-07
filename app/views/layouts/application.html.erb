@@ -12,8 +12,8 @@
 <body>
 
 <div class="title">
-<h1>Come and Dine</h1>
-<h4>...all things are ready, come to the feast</h4>
+  <h1>Come and Dine</h1>
+  <h4>...all things are ready, come to the feast</h4>
 </div>
 
 
@@ -26,26 +26,20 @@
 	<!-- </div> -->
 
   
-      <% if current_user %>
+  <% if current_user %>
       Logged in as <%= current_user.email %>.
       <%= link_to "Log Out", logout_path %>
-    <% else %>
+  <% else %>
       <%= link_to "Sign Up", signup_path %><br>
       <%= link_to "Log In", login_path %>
-    <% end %>
+  <% end %>
    
 	
   <% flash.each do |name,msg| %>
 		<%= content_tag :div, msg, id: "flash_#{name}" %>
 	<% end %>
 
-
-
 <%= yield %>
-
-
-
-
 
 </body>
 </html>

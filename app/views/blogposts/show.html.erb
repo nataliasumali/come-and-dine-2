@@ -1,27 +1,34 @@
 <div class="col-md-6">
-<h3> <%= @blogpost.title %> </h3>
 
-<h4 class="text-primary"> <%= @blogpost.name %>, <%= @blogpost.city %>, <%= @blogpost.state %> </h4>
+  <h3> <%= @blogpost.title %> </h3>
 
-<p> <%= @blogpost.content %> </p>
+  <h4 class="text-primary"> <%= @blogpost.name %>, <%= @blogpost.city %>, <%= @blogpost.state %> </h4>
+
+  <p> <%= @blogpost.content %> </p>
+
 </div>
 
 <div class="col-md-6">
-<h3>Comments</h3>
-<% @blogpost.comments.each do |c| %>
-	<h4 class="text-primary"><%= c.name %></h4>
-	<div><%= c.comment %></div><hr/>
-<% end %>
+
+  <h3>Comments</h3>
+
+    <% @blogpost.comments.each do |c| %>
+	   <h4 class="text-primary"><%= c.name %></h4>
+	   <div><%= c.comment %></div><hr/>
+
+  <% end %>
+
 </div>
 
 <div class="col-md-12">
-<h3> New Comment </h3>
 
-<%= form_for( @comment ,:url => {:action => :new_comment, :controller => :blogposts} ) do |f| %>
+  <h3> New Comment </h3>
+
+    <%= form_for( @comment ,:url => {:action => :new_comment, :controller => :blogposts} ) do |f| %>
 
     <%= hidden_field_tag :blogpost_id, @blogpost.id %>
 
-<div class="col-md-3">
+  <div class="col-md-3">
 
     <div class="field">
       <%= f.label :name %><br>
@@ -30,20 +37,18 @@
 
     <div class="field">
       <%= f.label :comment %><br>
-      <%= f.text_area :comment, placeholder: "comment", :class => "form-control" %>
+      <%= f.text_area :comment, placeholder: "comment", :class => "form-control", :rows => "10" %>
     </div>
 
     <div class="actions">
       <%= f.submit :class => "btn btn-primary" %>
     </div>
 
-</div>
+  </div>
 
 <% end %>
 
 </div>
-
-<div class="space"></div>
 
 <div class="col-md-12">
 <%= link_to "Enrich this enjoyment", edit_blogpost_path(@blogpost) %> |
