@@ -37,3 +37,5 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'mongoid', github: 'mongoid/mongoid'
+
+gem 'rails_12factor'
