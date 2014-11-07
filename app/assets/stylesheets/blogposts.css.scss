@@ -2,3 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// @import url(http://fonts.googleapis.com/css?family=Cherry Cream Soda);
+
+$mainfont: 'Cherry Cream Soda';
+
+body {
+	background-image: url(imgres.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: $mainfont;
+}
+
+.container {
+	background-color: white;
+	opacity: 0.6;
+}
+
+.title {
+	text-align: center;
+}

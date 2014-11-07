@@ -13,7 +13,7 @@
 
 <div class="title">
 <h1>Come and Dine</h1>
-<h6>...all things are ready, come to the feast</h6>
+<h5>...all things are ready, come to the feast</h5>
 </div>
 
 <div id="user_header">
@@ -50,7 +50,11 @@
 		<%= content_tag :div, msg, id: "flash_#{name}" %>
 	<% end %>
 
+<div class="container">
+
 <%= yield %>
+
+</div>
 
 </div>
 

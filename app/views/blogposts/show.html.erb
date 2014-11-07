@@ -1,7 +1,7 @@
 <div class="col-md-6">
 <h3> <%= @blogpost.title %> </h3>
 
-<h4> <%= @blogpost.name %>, <%= @blogpost.city %>, <%= @blogpost.state %> </h4>
+<h4 class="text-primary"> <%= @blogpost.name %>, <%= @blogpost.city %>, <%= @blogpost.state %> </h4>
 
 <p> <%= @blogpost.content %> </p>
 </div>
@@ -10,11 +10,11 @@
 <h3>Comments</h3>
 <% @blogpost.comments.each do |c| %>
 	<h4 class="text-primary"><%= c.name %></h4>
-	<div><%= c.comment %></div>
+	<div><%= c.comment %></div><hr/>
 <% end %>
 </div>
 
-
+<div class="col-md-12">
 <h3> New Comment </h3>
 
 <%= form_for( @comment ,:url => {:action => :new_comment, :controller => :blogposts} ) do |f| %>
@@ -22,26 +22,33 @@
     <%= hidden_field_tag :blogpost_id, @blogpost.id %>
 
 <div class="col-md-3">
+
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name, placeholder: "name", :class => "form-control" %>
     </div>
+
     <div class="field">
       <%= f.label :comment %><br>
       <%= f.text_area :comment, placeholder: "comment", :class => "form-control" %>
     </div>
+
     <div class="actions">
       <%= f.submit :class => "btn btn-primary" %>
     </div>
+
 </div>
+
 <% end %>
+
+</div>
 
 <div class="space"></div>
 
 <div class="col-md-12">
 <%= link_to "Enrich this enjoyment", edit_blogpost_path(@blogpost) %> |
 
-<%= link_to "Delete this post", :blogpost, method: :delete, data: { confirm: 'Are you sure?'} %> |
+<%= link_to "Delete", :blogpost, method: :delete, data: { confirm: 'Are you sure?'} %> |
 
 <%= link_to "Back to the riches", blogposts_path %>
 </div>
