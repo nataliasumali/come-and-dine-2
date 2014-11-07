@@ -1,15 +1,18 @@
-<div class="col-md-12">
+<div class="col-md-6">
 <h3> <%= @blogpost.title %> </h3>
 
 <h4> <%= @blogpost.name %>, <%= @blogpost.city %>, <%= @blogpost.state %> </h4>
 
 <p> <%= @blogpost.content %> </p>
+</div>
 
+<div class="col-md-6">
+<h3>Comments</h3>
 <% @blogpost.comments.each do |c| %>
-	<div><%= c.name %></div>
+	<h4 class="text-primary"><%= c.name %></h4>
 	<div><%= c.comment %></div>
 <% end %>
-
+</div>
 
 
 <h3> New Comment </h3>
@@ -28,7 +31,7 @@
       <%= f.text_area :comment, placeholder: "comment", :class => "form-control" %>
     </div>
     <div class="actions">
-      <%= f.submit :class => "btn btn-info" %>
+      <%= f.submit :class => "btn btn-primary" %>
     </div>
 </div>
 <% end %>
