@@ -1,14 +1,40 @@
-<h1>Blogposts#new</h1>
+<h1>Add Enjoyment</h1>
 
 <%= form_for @blogpost do |f| %>
-	Name : <%= f.text_field :name %>
-	City : <%= f.text_field :city %>
-	State : <%= f.text_field :state %>
-	Title : <%= f.text_field :title %>
-	Content : <%= f.text_area :content %>
 
-	<%= f.submit "Add Enjoyment!" %>
+<div class="col-md-3">
+	<div class="field">
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: "name", :class => "form-control" %>
+	</div>
+
+	<div class="field">
+	<%= f.label :city %>
+	<%= f.text_field :city, placeholder:"city", :class => "form-control" %>
+	</div>
+
+	<div class="field">
+	<%= f.label :state %>
+	<%= f.text_field :state, placeholder: "state", :class => "form-control" %>
+	</div>
+
+	<div class="field">
+	<%= f.label :title %>
+	<%= f.text_field :title, placeholder: "title", :class => "form-control" %>
+	</div>
+
+	<div class="field">
+	<%= f.label :content %>
+	<%= f.text_area :content, placeholder: "content", :class => "form-control" %>
+	</div>
+	
+	<div class="actions">
+	<%= f.submit "Add Enjoyment" %>
+	</div>
+</div>
 
 	<% end %>
 
+<div class="col-md-12">
 	<%= link_to "Back to the riches", blogposts_path %>
+</div>
