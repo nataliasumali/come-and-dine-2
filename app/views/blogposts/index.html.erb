@@ -4,8 +4,9 @@
 
 	<% @blogposts.each do |b| %>
 
-		<h4><%= link_to b.title, blogpost_path(b) %></h4>
-
+		<h4><%= b.title %></h4>
+		<%= link_to "Read Enjoyment", blogpost_path(b) %>
+		
 		<hr/>
 
 	<% end %>

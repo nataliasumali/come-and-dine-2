@@ -1,4 +1,6 @@
 class BlogpostsController < ApplicationController
+
+  skip_before_action :require_login
   
   def index
     @blogposts = Blogpost.all
@@ -48,6 +50,9 @@ class BlogpostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def logged_in
   end
 
 end
