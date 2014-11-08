@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about/index' => 'about#index', as: :index_about
+
   # get 'sessions/new'
 
   get 'signup', to: 'users#new', as: 'signup'
