@@ -3,6 +3,7 @@
 <head>
   <title>Thirdtry</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application' %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  
@@ -12,7 +13,7 @@
 <body>
 
 <div class="title">
-  <h1>Come and Dine</h1>
+  <h1>come and dine</h1>
   <h4>...all things are ready, come to the feast</h4>
 </div>
   
@@ -40,14 +41,29 @@
       </span>
     </div>
   </div>
-   <li role="presentation">
-  <%= link_to "Sign Up", blogposts_path %>
-   <li role="presentation">
-  <%= link_to "Log In", blogposts_path %>
+   
+  <div id="user_header">
+  </div>
+  <% flash.each do |name,msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
+  <div id="user_header">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>
+        <li role="presentation">
+          <%= link_to "Log Out", session_path("current") %>
+        </li>
+    <% else %>  
+        <li role="presentation">
+          <%= link_to "Sign Up", new_user_path %> 
+        </li>
+       <li role="presentation">
+          <%= link_to "Log In", new_session_path %>
+        </li>  
+    <% end %>
+  </div>
 </ul>
-
-
-  
+ 
 <%#= link_to "Blogs", blogposts_path %>
 
 <%= yield %>
