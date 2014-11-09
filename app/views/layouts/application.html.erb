@@ -31,12 +31,13 @@
   <li role="presentation">
   <%= link_to "Contacts", blogposts_path %>
   </li>
+  
   <div class="col-md-6">
     <div class="input-group">
-      <%= text_field_tag :search, params[:search], :class => "form-control" %>
-      <span class="input-group-btn">
-        <%= submit_tag "Search", :class => "btn btn-primary" %>
-      </span>
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button">Search</button>
+        </span>
     </div>
   </div>
    

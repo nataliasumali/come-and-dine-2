@@ -2,14 +2,34 @@
 
 <h2>O the Riches</h2>
 
-	<% @blogposts.each do |b| %>
+<div class="row">
 
-		<h4><%= b.title %></h4>
-		<%= link_to "Read Enjoyment", blogpost_path(b) %>
-		
-		<hr/>
+	<div class="col-md-10">
 
-	<% end %>
+		<% @blogposts.each do |b| %>
+
+			<h4><%= b.title %> - <%= b.name %></h4> 
+			<%= link_to "Read Enjoyment", blogpost_path(b) %>
+			
+			<hr/>
+
+		<% end %>
+
+	</div>
+
+	<div class="col-md-2 linksToOtherSites">
+		<h4>Related Sites</h4>
+		<a href="https://www.hymnal.net/en/home">hymnal.net</a><br>
+		<a href="http://biblesforamerica.org/free-bible-and-christian-books/?gclid=CKuD5sG97sECFRBrfgod2EwAjA">biblesforamerica.org</a><br>
+		<a href="http://www.lsm.org/">lsm.org</a><br>
+		<a href="http://livingtohim.com/">livingtohim.com</a><br>
+		<a href="https://secure.lsm.org/ePubSales/">ePublication.org</a><br>
+		<a href="http://excellentbeliever.com/">excellentbeliever.com</a><br>
+		<a href="http://www.agodman.com/blog/">agodman.com</a>
+
+	</div>
+
+</div>
 
 <%= link_to "Add a New Enjoyment", new_blogpost_path %>
 </body>
