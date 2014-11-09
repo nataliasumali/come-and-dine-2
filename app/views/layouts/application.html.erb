@@ -26,9 +26,6 @@
   <%= link_to "About", index_about_path %>
   </li>
   <li role="presentation">
-  <%= link_to "Small Groups", blogposts_path %>
-  </li>
-  <li role="presentation">
   <%= link_to "Events", blogposts_path %>
   </li>
   <li role="presentation">
@@ -36,9 +33,9 @@
   </li>
   <div class="col-md-6">
     <div class="input-group">
-      <input type="text" class="form-control">
+      <%= text_field_tag :search, params[:search], :class => "form-control" %>
       <span class="input-group-btn">
-        <button class="btn btn-primary" type="button">Search</button>
+        <%= submit_tag "Search", :class => "btn btn-primary" %>
       </span>
     </div>
   </div>
@@ -64,10 +61,6 @@
     <% end %>
   <!-- </div> -->
 </ul>
-
-
-
-<div id="map-canvas"></div>
  
 <%#= link_to "Blogs", blogposts_path %>
 

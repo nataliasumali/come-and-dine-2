@@ -4,6 +4,6 @@ class Comment
 	field :name, type: String
 	field :comment, type: String
 
-	embedded_in :blogpost
+	belongs_to :blogpost
 
 end

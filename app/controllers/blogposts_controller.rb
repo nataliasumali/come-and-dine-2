@@ -1,12 +1,10 @@
 class BlogpostsController < ApplicationController
 
-  # Meredith added this line here below
   before_filter :authorize, :except => [:index, :show]
-  # skip_before_filter :authorize, :except => [:index, :show]
-  # skip_before_filter :authorize, :only [:index, :show]
   
   def index
-    @blogposts = Blogpost.all
+    @blogposts = Blogpost.all 
+    # @blogposts = Blogpost.search(params[:search])
   end
   
   def new
