@@ -1,6 +1,9 @@
 class BlogpostsController < ApplicationController
 
-  skip_before_action :require_login
+  # Meredith added this line here below
+  before_filter :authorize, :except => [:index, :show]
+  # skip_before_filter :authorize, :except => [:index, :show]
+  # skip_before_filter :authorize, :only [:index, :show]
   
   def index
     @blogposts = Blogpost.all

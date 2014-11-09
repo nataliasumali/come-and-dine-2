@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-skip_before_action :require_login
+  skip_before_filter :authorize
   
   def new
   end
@@ -14,7 +14,7 @@ skip_before_action :require_login
         # then see if user authenticates
         if user && user.authenticate(params[:password])
             # sets the cookie to the browser
-            session[:user_id] = user.id
+            session[:user_id] = user.id.to_s
             redirect_to root_url
         else
             flash.now.alert = "Email or password is invalid"

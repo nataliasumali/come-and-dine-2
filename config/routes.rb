@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'blogposts#index'
+
   get 'about/index' => 'about#index', as: :index_about
 
   # get 'sessions/new'
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
 
   post 'blogposts/new_comment' => 'blogposts#new_comment', as: :new_comment
 
-  root 'blogposts#index'
+  
 
 
   
