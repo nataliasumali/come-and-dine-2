@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
 
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize, :except => [:index, :show, :new_comment]
   
   def index
     @blogposts = Blogpost.all 
