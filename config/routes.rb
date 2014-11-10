@@ -18,12 +18,8 @@ Rails.application.routes.draw do
 
   post 'blogposts/new_comment' => 'blogposts#new_comment', as: :new_comment
 
-  post 'blogpost_search/find' => 'blogpost_search#find', as: :find
-
-  
-
-
-  
+  get 'maps/index' => 'maps#index', as: :maps
+ 
   # get 'blogposts/' => 'blogposts#index', as: :blogposts
   
   # get 'blogposts/:id' => 'blogposts#show', as: :blogpost 
