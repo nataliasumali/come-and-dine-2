@@ -7,12 +7,17 @@
 $mainfont: 'Poiret One';
 
 body.new_blogpost_body {
-	background-color: white;
+	background-color: #D6D9A6;
+	color: #4CB3BE;
 	font-family: $mainfont;
 
 		h1 {
 			font-size: 60px;
 			margin: 0 auto 0 auto;
+		}
+
+		p {
+			font-size: 17px;
 		}
 
 	.title {
