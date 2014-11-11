@@ -4,6 +4,36 @@
 
     <h3>Working on something for this part of page</h3>
 
+    <hr />
+
+    <!-- form for comments -->
+
+  <h3> New Comment </h3>
+
+  <%= form_for( @comment ,:url => {:action => :new_comment, :controller => :blogposts} ) do |f| %>
+
+  <%= hidden_field_tag :blogpost_id, @blogpost.id %>
+
+    <div class="col-md-5">
+
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, placeholder: "name", :class => "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :comment %><br>
+        <%= f.text_area :comment, placeholder: "comment", :class => "form-control", :rows => "10" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit :class => "btn btn-primary" %>
+      </div>
+
+    </div>
+
+  <% end %>
+
   </div>
 
 <!-- content of post -->
@@ -32,35 +62,6 @@
     <% end %>
 
   </div>
-
-<!-- form for comments -->
-
-  <h3> New Comment </h3>
-
-  <%= form_for( @comment ,:url => {:action => :new_comment, :controller => :blogposts} ) do |f| %>
-
-  <%= hidden_field_tag :blogpost_id, @blogpost.id %>
-
-    <div class="col-md-3">
-
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name, placeholder: "name", :class => "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :comment %><br>
-        <%= f.text_area :comment, placeholder: "comment", :class => "form-control", :rows => "10" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit :class => "btn btn-primary" %>
-      </div>
-
-    </div>
-
-  <% end %>
-
 
 <!-- links to other pages -->
 

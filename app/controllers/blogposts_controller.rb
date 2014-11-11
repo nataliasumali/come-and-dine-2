@@ -53,7 +53,4 @@ class BlogpostsController < ApplicationController
     end
   end
 
-  def logged_in
-  end
-
 end
