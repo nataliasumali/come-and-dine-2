@@ -14,21 +14,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-
-  # Mer comment this part below out
-  # def logged_in?
-  # 	current_user != nil
-  # end
-
   def authorize
-    #Mer commented this stuff below out so we can try and get limited access working
-  	# unless logged_in
-  	# 	redirect_to blogposts_path
-  	# end
 
     #Mer added this stuff below
     redirect_to login_path, alert: "Not authorized" if current_user.nil?
   end
-  # helper_method :require_login
+
 
 end
